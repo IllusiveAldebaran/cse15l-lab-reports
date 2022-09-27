@@ -1,7 +1,7 @@
 Hello World!
 
 
-[Lab 1](https:/IllusiveAldebaran.github.io/lab-report-1-week0.md)
+[Lab 1](https:/IllusiveAldebaran.github.io/cse15l-lab-reportslab-report-1-week0.md)
 
 # So is this like a header?
 And I know this is ***important**

@@ -4,4 +4,4 @@
 
  
 
-[Link back](cse15l-lab-reports/index.md)
+[Link back](index.md)

@@ -4,5 +4,3 @@
 
 layout: home
 ---
-
-# Welcome to the very basic github page

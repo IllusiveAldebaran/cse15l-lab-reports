@@ -8,6 +8,7 @@ layout: default
 # Welcome to my Small CSE15L Page
 
 Here is a small documentation of my work: 
+Damn it, smh had to use microsoft. \_(ツ)_/¯
 
 ## Homework Labs
 

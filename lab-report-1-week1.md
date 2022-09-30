@@ -40,11 +40,12 @@ It will ask you if you want to continue connecting only the first time you ssh.
 
 ###**3) **Trying some commands (cmon I know this)**
     
-I kb report week 1now some of the basic commands. I know that `cd`, `mkdir`, `rmdir`, `mv`, etc. I use them almost every day. But maybe I'll list some of my favorite info.
+I know some of the basic commands. I know that `cd`, `mkdir`, `rmdir`, `mv`, etc. I use them almost every day. But maybe I'll list some of my favorite info.
 Adding the "-l" flag to ls is more likeable if I want information on permssions and time. 
 The "find" command is very helpful to search. Usually I use it as `find <path_parent> -name <file_name>`
 And of course the grep command. The command gives me a line with the expression I am looking for. Like `grep <file_name> <regex_expression>`
 
+And of course there are a lot of other commands. And shortcuts like using :s/.../../ or maybe !* or !<number>.
 ![Image](images/bash_commands.png)
 
 

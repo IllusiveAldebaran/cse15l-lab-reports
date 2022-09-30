@@ -13,4 +13,5 @@ Damn it, smh had to use microsoft. ¯\\_(ツ)_/¯
 ## Homework Labs
 
 [Homework 1](lab-report-1-week0.md)
+
 [Lab Report 1](lab-report-1-week1.md)

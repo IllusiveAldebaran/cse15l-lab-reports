@@ -46,7 +46,7 @@
     ftp stands for file transfer protocol. scp only stands for secure copy. No protocol, big sad.
 
     Anyways, to use it's pretty obvious how. 
-    Just use `scp <target_file> <user>@<hostname>:<file_path+name>`
+    Just use `scp <target_file> <user>@<hostname>:<file_path/file_name>`
 
     That's all it is. Make sure to specify the file path location! I had a friend of mine not  have it work because he left the area after the colon blank. Also to copy something from host to client just reverse the order of the arguements. Easy!
 
@@ -60,14 +60,17 @@
 
     Anyways, we will secure copy this user and place the contents of this file in our remote computer. We use scp again but this time place it in "~/.ssh/authorized_keys". Since we're just allowing only one user we can just place 'id_rsa' into '.ssh/' directory and rename it to 'authorized_keys'.
     
-    
+
 
 
 
 
  ### 6) Optimize, configure. We are the linux user. 
  
- It is our destiny. We optimize and configure. We tweak to our needs and wants. We are the linux user.
+    It is our destiny. We optimize and configure. We tweak to our needs and wants. We are the linux user.
+    
+    TWEAK IT. TWEAK IT.
+    CHANGE THE RC HAHAHAHAHA.
 
 
 

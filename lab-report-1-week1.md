@@ -40,7 +40,7 @@ It will ask you if you want to continue connecting only the first time you ssh.
 
 ###**3) **Trying some commands (cmon I know this)**
     
-I know some of the basic commands. I know that `cd`, `mkdir`, `rmdir`, `mv`, etc. I use them almost every day. But maybe I'll list some of my favorite info.
+I kb report week 1now some of the basic commands. I know that `cd`, `mkdir`, `rmdir`, `mv`, etc. I use them almost every day. But maybe I'll list some of my favorite info.
 Adding the "-l" flag to ls is more likeable if I want information on permssions and time. 
 The "find" command is very helpful to search. Usually I use it as `find <path_parent> -name <file_name>`
 And of course the grep command. The command gives me a line with the expression I am looking for. Like `grep <file_name> <regex_expression>`
@@ -80,6 +80,13 @@ TWEAK IT. TWEAK IT.
 CHANGE THE RC HAHAHAHAHA.
 In this case it looks like changing the .bashrc isn't sourcing properly after every session.
 However! '.bash_profile' is. So I have put some commands that I want to run automatically when I enter a session.
+
+Something I did not know was speicifying a command after ssh by including another argument in the form of paranthesis. Very good. But also interestingly let's read my configurations.
+
+`set -o vi` gives vi keybindings in terminal.
+`export PATH="<newpath>:$PATH"` gives a new path to search for more programs.
+`export PS1="blah blah $ ` gives a new prompt when shell is successful
+`export PS2="no please $ ` gives this prompt when shell fails.
 
 ![Image](images/custom_bash_profile.png)
 

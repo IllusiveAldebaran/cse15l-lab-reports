@@ -39,7 +39,7 @@ It will ask you if you want to continue connecting only the first time you ssh.
 ![Image](images/sshing_into_user.png)
 
 
-**3) **Trying some commands (cmon I know this)**
+**3) Trying some commands (cmon I know this)**
     
 I know some of the basic commands. I know that `cd`, `mkdir`, `rmdir`, `mv`, etc. I use them almost every day. But maybe I'll list some of my favorite info.
 Adding the "-l" flag to ls is more likeable if I want information on permssions and time. 
@@ -51,7 +51,7 @@ And of course there are a lot of other commands. And shortcuts like using :s/...
 ![Image](images/bash_commands.png)
 
 
-**4) **Moving files with scp**
+**4) Moving files with scp**
 
 ftp stands for file transfer protocol. scp only stands for secure copy. No protocol, big sad.
 

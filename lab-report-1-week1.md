@@ -40,10 +40,10 @@ It will ask you if you want to continue connecting only the first time you ssh.
 
 ###**3) **Trying some commands (cmon I know this)**
     
-    I know some of the basic commands. I know that `cd`, `mkdir`, `rmdir`, `mv`, etc. I use them almost every day. But maybe I'll list some of my favorite info.
-    Adding the "-l" flag to ls is more likeable if I want information on permssions and time. 
-    The "find" command is very helpful to search. Usually I use it as `find <path_parent> -name <file_name>`
-    And of course the grep command. The command gives me a line with the expression I am looking for. Like `grep <file_name> <regex_expression>`
+I know some of the basic commands. I know that `cd`, `mkdir`, `rmdir`, `mv`, etc. I use them almost every day. But maybe I'll list some of my favorite info.
+Adding the "-l" flag to ls is more likeable if I want information on permssions and time. 
+The "find" command is very helpful to search. Usually I use it as `find <path_parent> -name <file_name>`
+And of course the grep command. The command gives me a line with the expression I am looking for. Like `grep <file_name> <regex_expression>`
 
 ![Image](images/bash_commands.png)
 
@@ -67,7 +67,7 @@ Basically on my client I will run `ssh-keygen` which generates a key. Running it
 
 Anyways, we will secure copy this user and place the contents of this file in our remote computer. We use scp again but this time place it in "~/.ssh/authorized_keys". Since we're just allowing only one user we can just place 'id_rsa' into '.ssh/' directory and rename it to 'authorized_keys'.
     
-
+![Image](images/ssh_authorized_keys.png)
 
 
 

@@ -28,7 +28,7 @@ I have coded in daylight and I needed a good light mode so I changed it to look 
 
 Obviously we want to establish an ssh connection. This "secure shell" is done by writing out `ssh <user>@<hostname>`. That should be it most of the time. I did the same thing when I was logging into my rasberry pi once too. Perfectly fine. In this case our user would be cs15lfa22zz or something similar because that is the username for the class. And hostname on the UCSD cluster is ieng6.ucsd.edu. 
 
-You can find more about your user (here)[https://sdacs.ucsd.edu/~icc/index.php]
+You can find more about your user [here](https://sdacs.ucsd.edu/~icc/index.php)
 Make sure to reset your password!
 
 So remoting into my user would look like `ssh cs15lfa22ca@ieng6.ucsd.edu`

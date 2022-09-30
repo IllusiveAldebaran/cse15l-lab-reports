@@ -35,6 +35,7 @@ So remoting into my user would look like `ssh cs15lfa22ca@ieng6.ucsd.edu`
 
 It will ask you if you want to continue connecting only the first time you ssh.
 
+
 ![Image](images/sshing_into_user.png)
 
 
@@ -46,6 +47,7 @@ The "find" command is very helpful to search. Usually I use it as `find <path_pa
 And of course the grep command. The command gives me a line with the expression I am looking for. Like `grep <file_name> <regex_expression>`
 
 And of course there are a lot of other commands. And shortcuts like using :s/.../../ or maybe !* or !<number>.
+
 ![Image](images/bash_commands.png)
 
 

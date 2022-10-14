@@ -123,12 +123,15 @@ class SearchEngine {
 As an example of how it works the following are a series of images of entering url's and querying to add new words and search for phrases.
 
 No search yet
+
 ![Images](images/empty_search.png)
 
 Adding queries, mercury, jupiter, earth, etc. The planets of our solar system.
+
 ![Images](images/adding_word_uranus.png)
 
 And finally again searching for a word. But this time searching for any of the words with "ar" in it.
+
 ![Images](images/search_ar.png)
 
 ## 2) Debugging

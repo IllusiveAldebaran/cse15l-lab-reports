@@ -86,7 +86,9 @@ It is our destiny. We optimize and configure. We tweak to our needs and wants. W
 Something I did not know was speicifying a command after ssh by including another argument in the form of paranthesis. 
 For example typing out `ssh cs15lfa22ca@ieng6.ucsd.edu "mkdir .ssh"` will try to create the ".ssh" directory and log out. This is very helpful as we could of used it earlier when we were setting the ssh key without having to log out since it would of been automatic. (It would of logged in, run the command, and exit).
 
+Oh and well, there tricks to running commands. Having `command1 ; command2` will run the second command after the first. `command1 && command2` is a conditional statement where the second runs only if the first succeeds. And `command1 || command2` runs command2 only if command1 fails. Very nice to have small tricks like that. In fact in the picture below we make use of `ssh` with inputting a string of two commands seperated by ";", having our terminal first `ls` then `echo`.
 
+![Image](images/lab1-tricks.png)
 
 **7) Extra**
 

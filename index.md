@@ -8,7 +8,7 @@ layout: default
 # Welcome to my Small CSE15L Page
 
 Here is a small documentation of my work: 
- ¯\\_(ツ)_/¯
+ ¯¯\\_(ツ)_/¯¯
 
 ## Homework Labs
 

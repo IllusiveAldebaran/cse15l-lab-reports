@@ -8,10 +8,12 @@ layout: default
 # Welcome to my Small CSE15L Page
 
 Here is a small documentation of my work: 
-Damn it, smh had to use microsoft. ¯\\_(ツ)_/¯
+ ¯\\_(ツ)_/¯
 
 ## Homework Labs
 
-[Homework 1](lab-report-1-week0.md)
+[Homework 1](lab-report-0.md)
 
-[Lab Report 1](lab-report-1-week1.md)
+[Lab Report 1](lab-report-1.md)
+
+[Lab Report 2](lab-report-2.md)

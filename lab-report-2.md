@@ -195,7 +195,7 @@ One quick way I chose to fix it is to include a swap variable and include it:
 ### b) Bug 2, List Example
 
 For the test we try to merge at first just two simple Lists with one item. 
-The second test tries to merge two Lists but with 2 and 3 strings. Both adhere to the ordered alphlabetically requirement.
+The second test tries to merge two Lists but with 2 and 3 strings. Both adhere to the ordered alphabetically requirement.
 
 ```
   @Test

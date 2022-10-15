@@ -136,5 +136,62 @@ And finally again searching for a word. But this time searching for any of the w
 
 ## 2) Debugging
 
+### a) Bug 1, Arrays Example
+
+```
+public class ArrayTests {
+	@Test 
+	public void testReverseInPlace1() {
+    int[] input1 = { 3 };
+    ArrayExamples.reverseInPlace(input1); // added assignment of reversed
+    assertArrayEquals(new int[]{ 3 }, input1);
+	}
+  @Test
+	public void testReverseInPlace2() {
+    int[] input1 = { 5, 3, 2, 1 };
+    ArrayExamples.reverseInPlace(input1); // added assignment of reversed
+
+    assertArrayEquals(new int[]{ 1, 2, 3, 5 }, input1);
+	}
+  
+  @Test
+	public void testReverseInPlace3() {
+    int[] input1 = { 2, 3, 2, 1, 4 };
+    ArrayExamples.reverseInPlace(input1); // added assignment of reversed
+    assertArrayEquals(new int[]{ 4, 1, 2, 3, 2 }, input1);
+	}
+```
+
+From the test only two of the tests fail. They are the second and the third test. As it says the third element is the first wrong value for the second test (2 isntead of 3), and at the fourth element instead of 3 it is 1 for the third test.
+
+![Image](images/lab3_errormessage1.png)
+
+But why does this happen? The fact that it passed the first test, the one with one element gives us a clue. And that in both tests 2 and three it got past halfway until there was an incorrect value tells us more. But definitively when we read the code and look for the bug:
+
+```
+  // Changes the input array to be in reversed order
+  static void reverseInPlace(int[] arr) {
+    for(int i = 0; i < arr.length; i += 1) {
+      arr[i] = arr[arr.length - i - 1];
+    }
+  }
+```
+
+What we can see is that it will correctly bring half of the back values to the front, but by the time the index of i passes the center, all of the values of the previous arr[i] have been erased, so it does not overwrite the elements of the later half with previous elements. 
+
+One quick way I chose to fix it is to include a swap variable and include it:
+```
+  // Changes the input array to be in reversed order
+  static void reverseInPlace(int[] arr) {
+    int swap;
+    for(int i = 0; i < arr.length/2; i += 1) { // divide by 2, don't unreverse the array
+      swap = arr[i];
+      arr[i] = arr[arr.length-i-1];
+      arr[arr.length - i - 1] = swap;
+    }
+  }
+```
+
+### b) Bug 2, List Example
 
 [Link back](index.md)

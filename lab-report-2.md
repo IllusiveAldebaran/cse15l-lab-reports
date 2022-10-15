@@ -177,7 +177,7 @@ But why does this happen? The fact that it passed the first test, the one with o
   }
 ```
 
-What we can see is that it will correctly bring half of the back values to the front, but by the time the index of i passes the center, all of the values of the previous arr[i] have been erased, so it does not overwrite the elements of the later half with previous elements. 
+What we can see is that it will correctly bring half of the back values to the front, but by the time the index of i passes the center, all of the values of the previous arr[i] have been erased, so while it overwrites the second half of arr, it does not overwrite the elements of the later half with previous elements because they are now the same.
 
 One quick way I chose to fix it is to include a swap variable and include it:
 ```
@@ -193,5 +193,74 @@ One quick way I chose to fix it is to include a swap variable and include it:
 ```
 
 ### b) Bug 2, List Example
+
+For the test we try to merge at first just two simple Lists with one item. 
+The second test tries to merge two Lists but with 2 and 3 strings. Both adhere to the ordered alphlabetically requirement.
+
+```
+  @Test
+  public void testMerge() {
+  
+    List<String> list = Arrays.asList("test");
+    List<String> list2 = Arrays.asList("two");
+    List<String> expected = Arrays.asList("test","two");
+    List<String> result = ListExamples.merge(list, list2);
+  
+    assertArrayEquals(expected.toArray(), result.toArray());
+  
+  }
+     
+
+  @Test
+  public void testMerge2() {
+  
+    List<String> list = Arrays.asList("aab", "aabc");
+    List<String> list2 = Arrays.asList("aaba", "aabd", "za");
+    List<String> expected = Arrays.asList("aab","aaba", "aabc", "aabd", "za");
+
+    List<String> result = ListExamples.merge(list, list2);
+  
+    assertArrayEquals(expected.toArray(), result.toArray());
+  
+  }
+```
+
+
+Unfortunately it doesn't look like it worked. There seems to be a bug. And based on the test saying "OutOfMemoryError" then a good assumption is that it may of reached an infinite loop at some point. Or that the loop control is faulty. This happened for both ones. 
+
+![Image](images/lab3_errormessage1.png)
+
+```
+  // Takes two sorted list of strings (so "a" appears before "b" and so on),
+  // and return a new list that has all the strings in both list in sorted order.
+  static List<String> merge(List<String> list1, List<String> list2) {
+    List<String> result = new ArrayList<>();
+    int index1 = 0, index2 = 0;
+    while(index1 < list1.size() && index2 < list2.size()) {
+      if(list1.get(index1).compareTo(list2.get(index2)) < 0) {
+        result.add(list1.get(index1));
+        index1 += 1;
+      }
+      else {
+        result.add(list2.get(index2));
+        index2 += 1;
+      }
+    }
+    while(index1 < list1.size()) {
+      result.add(list1.get(index1));
+      index1 += 1;
+    }
+    while(index2 < list2.size()) {
+      result.add(list2.get(index2));
+      index1 += 1;
+    }
+    return result;
+  }
+```
+
+What we can see is that it looks like a pretty standard way of looping through both lists in the first loop. Again in the following two, but something is wrong. the second and third loops should look nearly identical, only switching out 1 with 2. But the third loop never increases the counter, so if index2 is less than list2, then there will be an infinite loop. In other words if the last element of list1 comes before list2, then there will be an infinite loop. A quick fix is replacing index1 with index2 in that third loop.
+
+
+
 
 [Link back](index.md)

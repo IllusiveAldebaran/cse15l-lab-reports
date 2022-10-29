@@ -122,17 +122,21 @@ class SearchEngine {
 ```
 As an example of how it works the following are a series of images of entering url's and querying to add new words and search for phrases.
 
-No search yet
-
 ![Images](images/empty_search.png)
 
-Adding queries, mercury, jupiter, earth, etc. The planets of our solar system.
+
+  No search yet. Since it is a url handleRequest() is run, with the block checking for the path equaling "\search". This calls the public method searchWord() with the argument being the String in the query, "mars". It splits the query and is taking the String that follows "s=", but before the next "=". But at this time in the program no words are recorded. Since it is empty it will return nothing. So the page returns an empty list by saying "Search results:" followed by where there would be the String that would return words that were found.
+
 
 ![Images](images/adding_word_uranus.png)
 
-And finally again searching for a word. But this time searching for any of the words with "ar" in it.
+Similarly handleRequest() takes the url and interprets what it should do with the path. As it includes "\add" in the path and a query it runs the corresponding block in the handleRequest() method. It splits the query with '=' and takes a String if it is proceeded by an 's'. Afterwards it calls addWord() with the String after the '=' as an argument. In this examples in the query the String would be "Uranus". It then adds the word to an array called string_history, with a max of 100 Strings. 
+
+After this example a similar url was pasted with queries of mercury, jupiter, earth, etc. The planets of our solar system.
 
 ![Images](images/search_ar.png)
+
+Finally we retry to search. How it works is similar to our first example. But this time we have the names of the planets of our solar system saved in our string_history[]. The handleRequest calls searchWord() with the String "ar". Since now we have the planets of the solar system added, it finds this pattern twice: "mars" and "earth". Thus the method handleRequest returns "Search results: " followed by the results "earth mars". 
 
 ## 2) Debugging
 

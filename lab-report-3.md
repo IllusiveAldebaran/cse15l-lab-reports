@@ -7,8 +7,14 @@ For this lab report we will be focusing on grep. By far it is the one with more 
 
 For starters `grep` seems to come from `g/re/p`, or a global search of a regular expression, then print. It reminds me of the substiture command in vim. For more information off wiki read [here](https://en.wikipedia.org/wiki/Grep). 
 
+Let's see a first example: 
+
+**The -o ** flag. 
+
+
+
 The following are useful flags that are so self explanatory I couldn't be bothered to choose them for the lab, yet are good to note:
-| Flag         | Description   ||--------------|------------|| -i | ignore case || -v | omit lines with the reg. expression
+| Flag         | Description   ||--------------|------------|| -i | ignore case || -v | omit lines with the reg. expression || -c | counts the number of times regex appears in file || -l | prints just the file names if regex is found || -r | include subdirectories || -A [number] | prints number of line after regex line as well  || -B [number] | Like -A, but backwards. || -C [number] | Like both -A and -B | -n | print with line numbers ||
 
 
 [Link back](index.md)

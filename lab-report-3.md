@@ -296,7 +296,7 @@ The following are useful flags that are so self explanatory I couldn't be bother
 | -B [number] | Like -A, but backwards. |
 | -C [number] | Like both -A and -B |
 | -n | print with line numbers |
-| -q | No output stdout. Read exit code ($?) |
+| -q | No output. May have to read exit code ($?) |
 
 
 

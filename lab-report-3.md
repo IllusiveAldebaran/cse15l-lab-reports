@@ -224,6 +224,11 @@ In this example we can see we are grepping for "San Francisco" and "Dynamics". I
 ```
 ![Images](images/labreport_week5_grep_E3.png)
 
+And sure enough it gives us a list of the lines of the place "San Francisco" and the word move.
+
+So yeah, very, very handy way of grepping for multiple stuff. I've used something like this to search for packages on my package manager by the way when I remember multiple phrases but not the name, useful stuff!. And if you want an **and** condition just grep twice I guess. The internet seemed to agree with me on that one. Weird, I thought there must have been a flag built in but I don't think there is.
+
+
 **-f**
 
 Oh man, this is a new one. I don't know this one. But I can see this. The manpage is pretty informative on this:

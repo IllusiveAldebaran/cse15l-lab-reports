@@ -94,9 +94,9 @@ But what if we had input the expression with spaces? Like would it have been fin
 ![Images](images/labreport_week5_grep_E9.png)
 
 
-For this example we search for the word added.
+For this example we search for the word "added".
 So there's a lot of output, but they seem to be showing the correct one right? So what is the problem? Take file rr167.txt and rr74.txt.
-These files have thw word added with another character immediately next to it. So if we grep incorrectly we don't get ":added" or "added.". This is one reason why the word flag can be handly if working with words as we know them. (If you are working with numbers this flag may work but there are better ways though.)
+These files have thw word "added" with another character immediately next to it. So in our first grep we don't get ":added" or "added.". This is one reason why the word flag can be handy if working with words as we know them. (If you are working with numbers this flag may work but there are better ways though.)
 
 Here is a third example:
 

@@ -37,7 +37,7 @@ This one will just make sure you are looking for a word. Let's look at some exam
 ./technical/biomed/rr196.txt:        speed and fatiguing properties move toward slower-twitch
 ```
 
-Here it is as an image below. Since directions say code block I will be inputting codeblock out of necessity, but the picture shows it better.
+Here is the example once again, but as an image below. Since directions say code block I will be inputting codeblock out of necessity, but the picture shows it better. I will be including a picture alongside a code block when I feel it is is better to look at or is necessary for the rest of the report..
 I also included the use of color just for easier legibility.
 ![Images](images/labreport_week5_grep_E7.png)
 

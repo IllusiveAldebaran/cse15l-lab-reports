@@ -24,33 +24,77 @@ grep "San Francisco" [file_name]
 grep "San Diego" [file_name]
 ```
 
-![Images](images/labreport_week5_grep_E1.png)
+```
+
+[potatoed@machina skill-demo1]$ grep --color=auto "San Diego" ./technical/biomed/rr*
+./technical/biomed/rr171.txt:          antibodies (Transduction Laboratories, San Diego, CA, USA
+./technical/biomed/rr172.txt:          Clonetics (San Diego, CA, USA. CSC was purchased from
+./technical/biomed/rr172.txt:          NHBEs (Clonetics, San Diego, CA, USA) were obtained at
+./technical/biomed/rr74.txt:          Transduction Laboratories, San Diego, CA, USA]; 1:1500
+[potatoed@machina skill-demo1]$ grep --color=auto "San Francisco" ./technical/biomed/rr*
+./technical/biomed/rr191.txt:          (Molecular Dynamics, San Francisco, CA, USA) for 3-5
+./technical/biomed/rr73.txt:            cellophane sheets (Pharmacia Biotech, San Francisco,
+./technical/biomed/rr74.txt:          anti-nNOS poly [Zymed Laboratories, South San Francisco,
+```
+
+Here it is as in image. Since directions say code block I will be inputting codeblock out of necessity, but the picture shows it better.
+![Images](images/labreport_week5_grep_E2.png)
 
 I also included the use of color just for easier legibility. But as you can see we search inside ./techinical/biomed/rr* files, where * is a placeholder for no string of characters to any string of characters for a file. As you can see we get 7 outputs.
 
 With the '-E' flag I can search for multiple patters seperated by the '|' delimeter.
 Again, we are going to grep for the same phrases as before, but in one command. 
 
+```
+[potatoed@machina skill-demo1]$ grep -E --color=auto "San Francisco|Dynamics" ./technical/biomed/rr*
+./technical/biomed/rr191.txt:          (Molecular Dynamics, San Francisco, CA, USA) for 3-5
+./technical/biomed/rr191.txt:          days, scanned using a PhosphorImager (Molecular Dynamics)
+./technical/biomed/rr196.txt:          Dynamics, Sunnyvale, California) with Image Quant
+./technical/biomed/rr73.txt:            cellophane sheets (Pharmacia Biotech, San Francisco,
+./technical/biomed/rr74.txt:          anti-nNOS poly [Zymed Laboratories, South San Francisco,
+```
 
-![Images](images/labreport_week5_grep_E2.png)
+![Images](images/labreport_week5_grep_E1.png)
 
 Great! This gives us the output of 7 lines with the phrases we are looking forward, printing new lines for each. But this begs the question though, what if we have multiple of the expressions we are searching on the same line:
 
+```
+
+[potatoed@machina skill-demo1]$ grep -E --color=auto "San Francisco|Dynamics" ./technical/biomed/rr*
+./technical/biomed/rr191.txt:          (Molecular Dynamics, San Francisco, CA, USA) for 3-5
+./technical/biomed/rr191.txt:          days, scanned using a PhosphorImager (Molecular Dynamics)
+./technical/biomed/rr196.txt:          Dynamics, Sunnyvale, California) with Image Quant
+./technical/biomed/rr73.txt:            cellophane sheets (Pharmacia Biotech, San Francisco,
+./technical/biomed/rr74.txt:          anti-nNOS poly [Zymed Laboratories, South San Francisco,
+```
+
+
+In this example we can see we are grepping for "San Francisco" and "Dynamics". It outputs 5 lines. Notice that the first one has both expressions, yet only prints once. This is good information to keep in mind. Finally we finish up by searching for 'move' as well. We also make use of the word (-w) flag.
+
+```
+
+[potatoed@machina skill-demo1]$ grep -wE --color=auto "San Francisco|move" ./technical/biomed/rr*
+./technical/biomed/rr191.txt:          (Molecular Dynamics, San Francisco, CA, USA) for 3-5
+./technical/biomed/rr196.txt:        speed and fatiguing properties move toward slower-twitch
+./technical/biomed/rr73.txt:            cellophane sheets (Pharmacia Biotech, San Francisco,
+./technical/biomed/rr74.txt:          anti-nNOS poly [Zymed Laboratories, South San Francisco,
+```
 ![Images](images/labreport_week5_grep_E3.png)
-
-In this example we can see we are grepping for "San Francisco" and "Dynamics". It outputs 5 lines. Notice that the first one has both expressions, yet only prints once. This is good information to keep in mind. 
-
 
 **-f**
 
 Oh man, this is a new one. I don't know this one. But I can see this. The manpage is pretty informative on this:
-"              Obtain patterns from FILE, one per line.  If this option is used
-              multiple  times  or  is  combined with the -e (--regexp) option,
-              search for all patterns given.  The  empty  file  contains  zero
-              patterns, and therefore matches nothing."
+
+"Obtain patterns from FILE, one per line.  If this option is used
+multiple  times  or  is  combined with the -e (--regexp) option,
+search for all patterns given.  The  empty  file  contains  zero
+patterns, and therefore matches nothing."
+
+So basically it reads off a first file and searches for the pattern in it from the following arguments. And it continues to do so. 
 
 
 The following are useful flags that are so self explanatory I couldn't be bothered to choose them for the lab, yet are good to note:
+
 | Flag         | Description   |
 |--------------|------------|
 | -i | ignore case |
@@ -62,8 +106,8 @@ The following are useful flags that are so self explanatory I couldn't be bother
 | -A [number] | prints number of line after regex line as well  |
 | -B [number] | Like -A, but backwards. |
 | -C [number] | Like both -A and -B |
-|-n | print with line numbers |
-|-q | No output stdout. Read exit code ($?) |
+| -n | print with line numbers |
+| -q | No output stdout. Read exit code ($?) |
 
 
 

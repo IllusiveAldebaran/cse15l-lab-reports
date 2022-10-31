@@ -41,7 +41,7 @@ Here is the example once again, but as an image below. Since directions say code
 I also included the use of color just for easier legibility.
 ![Images](images/labreport_week5_grep_E7.png)
 
-In the previous example we first grepped for the expression "move" inside ./technical/biomed/rr*, where r* is a wildcard. What we got were a lot of words that had the phrase "move" in it, but maybe weren't what we wanted. Adding the -w flag looked for the word itself, instead of just the the letters.
+In the previous example we first grepped for the expression "move" inside ./technical/biomed/rr\*, where r\* is a wildcard. What we got were a lot of words that had the phrase "move" in it, but maybe weren't what we wanted. Adding the -w flag looked for the word itself, instead of just the the letters.
 
 But what if we had input the expression with spaces? Like would it have been fine if did `grep " move " [filename]`? I don't think so. Consider:
 

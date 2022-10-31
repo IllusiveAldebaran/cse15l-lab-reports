@@ -7,10 +7,11 @@ For this lab report we will be focusing on grep. By far it is the one with more 
 
 For starters `grep` seems to come from `g/re/p`, or a global search of a regular expression, then print. It reminds me of the substiture command in vim. For more information off wiki read [here](https://en.wikipedia.org/wiki/Grep). 
 
-Let's see a first example: 
+Let's see a first flag: 
 
-**The -o flag.**
+**The -w flag.**
 
+This one will just make sure you are looking for a word. 
 
 
 **The -E flag.**
@@ -91,9 +92,45 @@ search for all patterns given.  The  empty  file  contains  zero
 patterns, and therefore matches nothing."
 
 So basically it reads off a first file and searches for the pattern in it from the following arguments. And it continues to do so. 
+For starters we create a file named "file_names_to_search_for.txt" and place this as it's contents:
+
+![Images](images/labreport_week5_grep_E6.png)
+
+Then we try to put the flag to take these lines as input and grep for the expressions in "file_names_to_search_for.txt".
+
+```
+
+[potatoed@machina skill-demo1]$ grep -f --color=auto file_names_to_search_for.txt ./technical/biomed/rr*
+grep: --color=auto: No such file or directory
+```
+
+![Images](images/labreport_week5_grep_E4.png)
+
+Why didn't it work? Well it's because the filename we want to read to input the expressions for grep should come immediately after the -f flag. Let's try again.
+
+```
+[potatoed@machina skill-demo1]$ grep --color=auto -wf file_names_to_search_for.txt ./technical/biomed/rr*
+./technical/biomed/rr171.txt:          antibodies (Transduction Laboratories, San Diego, CA, USA
+./technical/biomed/rr172.txt:          Clonetics (San Diego, CA, USA. CSC was purchased from
+./technical/biomed/rr172.txt:          NHBEs (Clonetics, San Diego, CA, USA) were obtained at
+./technical/biomed/rr191.txt:          (Molecular Dynamics, San Francisco, CA, USA) for 3-5
+./technical/biomed/rr191.txt:          days, scanned using a PhosphorImager (Molecular Dynamics)
+./technical/biomed/rr196.txt:          previously [ 4 ] . Two animals died on the night after
+./technical/biomed/rr196.txt:          Dynamics, Sunnyvale, California) with Image Quant
+./technical/biomed/rr196.txt:        speed and fatiguing properties move toward slower-twitch
+./technical/biomed/rr73.txt:            cellophane sheets (Pharmacia Biotech, San Francisco,
+./technical/biomed/rr74.txt:          Transduction Laboratories, San Diego, CA, USA]; 1:1500
+./technical/biomed/rr74.txt:          anti-nNOS poly [Zymed Laboratories, South San Francisco,
+
+```
+
+![Images](images/labreport_week5_grep_E5.png)
+
+This time we get a proper output. I also included to -w flag to avoid words like "re*move*d". Notice how it searches for all expressions at once. I guess you could think of the command as being similar to `grep -E "line1|line2|line3|..." files_to_search`, where the lines are from the input file. 
 
 
 The following are useful flags that are so self explanatory I couldn't be bothered to choose them for the lab, yet are good to note:
+
 
 | Flag         | Description   |
 |--------------|------------|

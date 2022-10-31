@@ -153,7 +153,7 @@ Here is a third example:
 [potatoed@machina skill-demo1]$ 
 ```
 
-![Images](images/labreport_week5_grep_E7.png)
+![Images](images/labreport_week5_grep_E8.png)
 
 In this example we only look for the word "due", while avoiding words like "resi*due*. Again we look at the same files.
 

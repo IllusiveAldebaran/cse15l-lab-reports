@@ -13,6 +13,20 @@ Let's see a first example:
 
 
 
+**The -E flag.**
+
+Supposed to have replaced the now depcrated `egrep`, this flag allows us to search for more than one expression.
+
+For example say that I want to search for all iterations that *"San Francisco :* or *"San Diego"* appear in a set of files, and I want to print those lines. I could do 
+```grep "San Francisco" [file_name]
+grep "San Diego" [file_name]```
+
+![Images](images/labreport_week5_grep_E1.png)
+
+I also included the use of color just for easier legibility. But as you can see we search inside ./techinical/biomed/rr* files, where * is a placeholder for no string of characters to any string of characters for a file. As you can see we get 7 outputs.
+
+With the  flag 
+
 
 
 The following are useful flags that are so self explanatory I couldn't be bothered to choose them for the lab, yet are good to note:
@@ -23,9 +37,12 @@ The following are useful flags that are so self explanatory I couldn't be bother
 | -c | counts the number of times regex appears in file |
 | -l | prints just the file names if regex is found |
 | -r | include subdirectories |
+| -R | include subdirectories and symlinks |
 | -A [number] | prints number of line after regex line as well  |
 | -B [number] | Like -A, but backwards. |
-| -C [number] | Like both -A and -B | -n | print with line numbers |
+| -C [number] | Like both -A and -B |
+|-n | print with line numbers |
+|-q | No output stdout. Read exit code ($?) |
 
 
 

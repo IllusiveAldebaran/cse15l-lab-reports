@@ -19,7 +19,9 @@ At this point I find the line I am interested is 16 lines down. This is where ha
 ![Images](images/week6_lab3.png)
 
 So great, now I am 16 lines down on the line I am interested in. But I intend to add a print statment above is. No problem, vim has a command to create a new line and enter insert mode. I can do this pressing the following:
-<shift>+o
+
+\<shift>+o
+
 While 'o' by itself would normally create a new line under my cursor, capital O (What I did above) will create a new line above it. You may notice similar behavior accross other commands, such as 'p' vs 'P'.
 Now it is time to type out the code we are interested in. And this might put us above the 30-key press goal but what are we going to do about it? We're writing the code itself. And yeah, having a plug in that autocompletes would also be nice, but I have not installed anything like that yet and wouldn't be a vim feature out of the box, so it feels unfair.
 
@@ -27,7 +29,9 @@ Now it is time to type out the code we are interested in. And this might put us 
 
 Great, now we have entered insert mode and have finished adding our text. What do we do next? Well we want to save and quit right?
 So to first exit insert mode we can enter:
-<esc>
+
+\<esc>
+
 This will bring us back to normal mode. And to save we can do `:wq` right? Well yes, but since we care about number of keypresses there is another thing we can do. Entering 'ZZ' will also save and quit. There are similar commands with capital Z, but between you and me, I still prefer `:wq`. But anyways, we enter 
 ZZ
 In this particular example.

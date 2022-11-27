@@ -187,7 +187,8 @@ Then the next line is just classic renaming in bash. Maybe the student should re
 
 But our example has the correct name. The first line still gets the filename, but this time it's correct, so the if statement is false and the rest of that if statement is skipped. No output nor an error message.
 
-```cp $PREFIX/$TESTNAME.java ./```
+```cp $PREFIX/$TESTNAME.java ./
+```
 
 We're almost at the good stuff. This line just copies our testing file from our original directory, like the one with the script, and places it with the students. No output or error message.
 

@@ -129,17 +129,22 @@ Does what it says it does. There could be multiple times that the code can come 
 Also notice that it exits the script with exit code 0, since giving a score is the proper function of the script.
 
 
-```rm -rf $STUDENT_DIR 2> /dev/null```
+```
+rm -rf $STUDENT_DIR 2> /dev/null
+```
 
 Remove the old student repo, the one from the previous student. I don't want the user to care if there was indeed one or not, so I throw any error message to the trash, "/dev/null". Goodbye into the void little guy. 
 
-```git clone $1 $STUDENT_DIR || exit 1```
+```
+git clone $1 $STUDENT_DIR || exit 1
+```
 
-Does what it looks like. Tries to clone the student repo, which is an argument to the script *$1*. If it fails, well then it exits. That's what || can be used for, as a conditional. Exits with an error too, since this shouldn't happen, and is probably due to the initial argument of the script being wrong. Also it is clones into *$STUDENT_DIR*, whatever you wish for that directory to be named it was named near the beginning of the script.
+Does what it looks like. Tries to clone the student repo, which is an argument to the script *$1*. If it fails, well then it exits. That's what \|\| can be used for, as a conditional. Exits with an error too, since this shouldn't happen, and is probably due to the initial argument of the script being wrong. Also it is clones into *$STUDENT_DIR*, whatever you wish for that directory to be named it was named near the beginning of the script.
 
 In our example it takes *https://github.com/ucsd-cse15l-f22/list-methods-corrected* as the repo and clones that one under the *$STUDENT_DIR* name. This line does output that it is cloning, and that behavior is seen in the example. Does not exit since it worked.
 
-```set -o pipefail```
+```set -o pipefail
+```
 
 Consider a command fails. Consider that this command is piped into another command. That second command takes in the error and doesn't care. It says that everything is fine. But someone in that pipeline there was an error. Setting this makes sure if there is a failure anywhere in the pipeline we know that something went wrong. Since I use pipes I care about this and I do not want my script not to know this stuff.
 
@@ -172,8 +177,8 @@ fi
 So there is a bit more going on. First of all, now we are (or should be) in the directory with the file we intend to grade. But we check if it has the correct name, *"ListExamples.java"*. So we check if there is a .java file. It is probably of the form " *something.java* ", even if it does have the wrong name. So *$badname* is meant to isolate that part with the wrong name. The `cut` command divide them up at any period and takes in the first argument. `-d` means the delimiter sets to the next character, and the `-f` means to take in the field based on the number afte rit. In the part above that would be " *something.java* " ---> " *something* ". Anyways this is important for not just changing the file name.
 
 So then we check if it is indeed is the wrong name. Then if it is the wrong name we have to do two things.
-> 1) Rename anything with the badname inside the file to the correct one.
-> 2) Change the file name.
+
+1) Rename anything with the badname inside the file to the correct one. || 2) Change the file name.
 
 That's what each line does. `sed` replaces the contents in the file *$badname.java* by taking it as the input (`-i`), and then **s**ubstitutes when it sees **$badname** with **ListExamples** at all instances (**g**lobally).
 

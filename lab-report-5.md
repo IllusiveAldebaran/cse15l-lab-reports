@@ -143,7 +143,8 @@ Does what it looks like. Tries to clone the student repo, which is an argument t
 
 In our example it takes *https://github.com/ucsd-cse15l-f22/list-methods-corrected* as the repo and clones that one under the *$STUDENT_DIR* name. This line does output that it is cloning, and that behavior is seen in the example. Does not exit since it worked.
 
-```set -o pipefail
+```
+set -o pipefail
 ```
 
 Consider a command fails. Consider that this command is piped into another command. That second command takes in the error and doesn't care. It says that everything is fine. But someone in that pipeline there was an error. Setting this makes sure if there is a failure anywhere in the pipeline we know that something went wrong. Since I use pipes I care about this and I do not want my script not to know this stuff.
@@ -187,7 +188,8 @@ Then the next line is just classic renaming in bash. Maybe the student should re
 
 But our example has the correct name. The first line still gets the filename, but this time it's correct, so the if statement is false and the rest of that if statement is skipped. No output nor an error message.
 
-```cp $PREFIX/$TESTNAME.java ./
+```
+cp $PREFIX/$TESTNAME.java ./
 ```
 
 We're almost at the good stuff. This line just copies our testing file from our original directory, like the one with the script, and places it with the students. No output or error message.
